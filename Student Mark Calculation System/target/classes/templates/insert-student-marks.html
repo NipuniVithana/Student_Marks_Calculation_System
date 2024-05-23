@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter Student Marks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f7ff; /* Light blue background */
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        div {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"],
+        input[type="reset"],
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover,
+        input[type="reset"]:hover,
+        button:hover {
+            background-color: #45a049;
+        }
+        button {
+            background-color: #008CBA;
+        }
+        button:hover {
+            background-color: #007BB5;
+        }
+    </style>
+    <script>
+        function saveStudent() {
+            window.location.href="/viewStudent";
+        }
+    </script>
+</head>
+<body>
+<div align="center">
+    <h2>ENTER STUDENTS MARKS</h2>
+    <form action=" " th:action="@{/}" th:object="${student}" method="post">
+        <table width="50%">
+            <tr>
+                <td width="20%"><label>Student ID</label></td>
+                <td width="30%"><input type="text" required th:field="*{id}"></td>
+            </tr>
+            <tr>
+                <td width="20%"><label>Student Name</label></td>
+                <td width="30%"><input type="text" required th:field="*{name}"></td>
+            </tr>
+            <tr>
+                <td width="20%"><label>CA</label></td>
+                <td width="30%"><input type="number" max="100" min="0" th:field="*{caMarks}" required></td>
+            </tr>
+            <tr>
+                <td width="20%"><label>Practical</label></td>
+                <td width="30%"><input type="number" max="100" min="0" th:field="*{practicalMarks}" required></td>
+            </tr>
+            <tr>
+                <td width="20%"><label>Theory</label></td>
+                <td width="30%"><input type="number" max="100" min="0" th:field="*{theoryMarks}" required></td>
+            </tr>
+        </table>
+        <input type="submit" value="Save">
+        <input type="reset" value="Reset">
+    </form>
+    <br/>
+    <button onclick="saveStudent()">View All Marks</button>
+</div>
+</body>
+</html>
