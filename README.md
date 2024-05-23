@@ -17,4 +17,9 @@ This project is a web-based application designed to manage student marks for a c
 - Calculate the final mark based on a weighted formula.
 - View all student marks in a tabulated format.
 
+![Screenshot (396)](https://github.com/NipuniVithana/Student_Marks_Calculation_System/assets/99274261/77964608-741c-4949-a963-155dbad38cd0)
+
+![Screenshot (397)](https://github.com/NipuniVithana/Student_Marks_Calculation_System/assets/99274261/74a013e1-9a12-417b-8b67-7350f39aa238)
+
+
 
